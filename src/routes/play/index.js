@@ -18,7 +18,7 @@ export const Play = (props) => {
         return <div> Loading... </div>
     }
 
-    // const chordsTimeline = parseJSONChords(song.chords)
+    const chordsTimeline = parseJSONChords(song.chords)
 
     return (
         <div className="section-title col-lg-8 col-md-10 ml-auto mr-auto text-center">

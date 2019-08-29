@@ -1,9 +1,11 @@
 export const parseJSONChords = (song) => {
     let chords = []
 
-    Object.keys(song).map((group)=>{
+    if (typeof(song)==='string') {
+        song = JSON.parse(song)
+    }
 
-        console.log(group)
+    Object.keys(song).map((group)=>{
 
         song[group].chords.map((chord)=>{
             chord.time.map((step)=>{
