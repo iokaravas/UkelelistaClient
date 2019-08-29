@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b0743c4a-e298-43f8-96d5-b4aea15807a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/play/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/play/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/index.js" afterDir="false" />
     </list>
@@ -96,7 +94,7 @@
       <workItem from="1566883104594" duration="7527000" />
       <workItem from="1566896421652" duration="72000" />
       <workItem from="1566896534620" duration="22867000" />
-      <workItem from="1567080332039" duration="3783000" />
+      <workItem from="1567080332039" duration="4113000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;Created first page&#10;Navigation works&#10;Working on listing">
       <created>1566890631720</created>
@@ -133,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567080679534</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Chord identification , parsing of JSON">
+      <created>1567090134441</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1567090134441</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +161,7 @@
     <MESSAGE value="Added utility for time based chords.&#10;Need song loading to handle unexpected behavior" />
     <MESSAGE value="Added loading song action" />
     <MESSAGE value="Temporary fix chords parsing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Temporary fix chords parsing" />
+    <MESSAGE value="Chord identification , parsing of JSON" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chord identification , parsing of JSON" />
   </component>
 </project>

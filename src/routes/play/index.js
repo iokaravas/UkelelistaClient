@@ -42,7 +42,6 @@ export const Play = (props) => {
             console.log('started playing')
 
             setChord(identifyChord(currentTime, chordsTimeline).name)
-
             // setChord(event.target.getCurrentTime())
         }
     }
@@ -59,7 +58,7 @@ export const Play = (props) => {
                     onStateChange={handleYTState}
                 />
 
-                {currentChord}
+                <h3> {currentChord} </h3>
 
                 {/*<ChordButton {...song}/>*/}
 

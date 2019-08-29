@@ -43,6 +43,7 @@ export const parseJSONChords = (song) => {
 }
 
 export const identifyChord = (time, rangedChords) => {
+
     for (let chord of rangedChords) {
         if ((chord.from <= time) && ( chord.to >= time )) {
             return chord
