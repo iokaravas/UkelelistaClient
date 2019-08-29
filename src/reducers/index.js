@@ -1,7 +1,8 @@
 const initialState = {
     songs: [],
     song: {},
-    isLoadingSongs: true
+    isLoadingSongs: true,
+    isLoadingSong: true
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -16,6 +17,12 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoadingSongs: action.isLoadingSongs
+            }
+            break
+        case 'IS_LOADING_SONG':
+            return {
+                ...state,
+                isLoadingSong: action.isLoadingSong
             }
             break
         case 'GET_SONG_SUCCESS':

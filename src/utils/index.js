@@ -1,8 +1,10 @@
 export const parseJSONChords = (song) => {
-
     let chords = []
 
     Object.keys(song).map((group)=>{
+
+        console.log(group)
+
         song[group].chords.map((chord)=>{
             chord.time.map((step)=>{
                 let chordObj = {

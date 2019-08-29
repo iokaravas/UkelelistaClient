@@ -3,6 +3,7 @@ import axios from 'axios'
 export const GET_SONGS = 'GET_SONGS'
 export const GET_SONGS_SUCCESS = 'GET_SONGS_SUCCESS'
 export const GET_SONG_SUCCESS = 'GET_SONG_SUCCESS'
+export const IS_LOADING_SONG = 'IS_LOADING_SONG'
 export const IS_LOADING_SONGS = 'IS_LOADING_SONGS'
 
 export const getSongs = (songs) => {
@@ -32,6 +33,13 @@ export const isLoadingSongs = (bool) => {
     return {
         type: "IS_LOADING_SONGS",
         isLoadingSongs: bool
+    }
+}
+
+export const isLoadingSong = (bool) => {
+    return {
+        type: "IS_LOADING_SONG",
+            isLoadingSong: bool
     }
 }
 
@@ -69,17 +77,35 @@ export const fetchSongsIfNeeded = songs => (dispatch, getState) => {
     }
 }
 
-export const fetchSong = (songName) => {
+const shouldFetchSong = (state) => {
+    const song = state.song
+
+    if (!song) {
+        return true
+    } else if (Object.keys(song).length===0) {
+        return true
+    }
+
+    if (state.isLoadingSongs) return false
+}
+
+export const fetchSongIfNeeded = song => (dispatch, getState) => {
+    if (shouldFetchSong(getState(), song)) {
+        return dispatch(fetchSong(song))
+    }
+}
+
+const fetchSong = (songName) => {
     return (dispatch) => {
-        // dispatch(isLoadingSongs(true))
+        dispatch(isLoadingSong(true))
         // Get songs
         return axios.get(`http://localhost:3001/song/${songName}`)
             .then(response=>{
                 dispatch(getSongSuccess(response.data.song))
-                // dispatch(isLoadingSongs(false))
+                dispatch(isLoadingSong(false))
             })
             .catch(error=>{
-                // dispatch(isLoadingSongs(false))
+                dispatch(isLoadingSong(false))
                 throw(error)
             })
     }
