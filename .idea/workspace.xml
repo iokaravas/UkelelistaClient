@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0743c4a-e298-43f8-96d5-b4aea15807a9" name="Default Changelist" comment="Temporary fix chords parsing">
+    <list default="true" id="b0743c4a-e298-43f8-96d5-b4aea15807a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/play/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/play/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/index.js" afterDir="false" />
     </list>
@@ -94,7 +96,7 @@
       <workItem from="1566883104594" duration="7527000" />
       <workItem from="1566896421652" duration="72000" />
       <workItem from="1566896534620" duration="22867000" />
-      <workItem from="1567080332039" duration="326000" />
+      <workItem from="1567080332039" duration="3783000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;Created first page&#10;Navigation works&#10;Working on listing">
       <created>1566890631720</created>
@@ -124,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567079444358</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Temporary fix chords parsing">
+      <created>1567080679533</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1567080679534</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +155,7 @@
     <MESSAGE value="Last commit before adding redux" />
     <MESSAGE value="Added utility for time based chords.&#10;Need song loading to handle unexpected behavior" />
     <MESSAGE value="Added loading song action" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added loading song action" />
+    <MESSAGE value="Temporary fix chords parsing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Temporary fix chords parsing" />
   </component>
 </project>
