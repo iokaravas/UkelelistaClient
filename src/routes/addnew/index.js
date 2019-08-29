@@ -1,9 +1,9 @@
 import React from 'react'
 
-const addnew = () => {
+export const Addnew = () => {
     return (<div>
         new
     </div>)
 }
 
-export default addnew
+export default Addnew

@@ -1,22 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import Item from '../../components/library/item'
+import {useSelector, useDispatch} from 'react-redux'
+import {fetchSongsIfNeeded} from '../../actions'
 
-const library = () => {
-    // Get from API stuff ;)
-    const songs = [
-        {
-            name: 'ena-chrisopsaro-sti-giala',
-            title: 'Ένα χρυσόψαρο μέσα στη γυάλα',
-            thumbnail: '',
-            base :'D#'
-        },
-        {
-            name: 'ti-mas-les',
-            thumbnail: '',
-            title: 'Τι μας λες',
-            base :'C#'
-        }
-    ]
+export const emptyLib = () => {
+    return (<div className="text-center"> Δεν υπάρχουν τραγούδια στη βιβλιοθήκη. </div>)
+}
+
+export const loadingLib = () => {
+    return (<div className="text-center"> ... </div>)
+}
+
+export const Library = () => {
+
+    const dispatch = useDispatch()
+    const songs = useSelector(state => state.songs)
+    const isLoading = useSelector(state => state.isLoadingSongs)
+
+    useEffect(()=>{dispatch(fetchSongsIfNeeded(songs))},[])
+
+    if (isLoading) return loadingLib()
+
+    if (songs.length===0) return emptyLib()
+
     return (<div className="container col-mb-4">
         <div className="row songs_row">
 
@@ -30,4 +36,4 @@ const library = () => {
     </div>)
 }
 
-export default library
+export default Library

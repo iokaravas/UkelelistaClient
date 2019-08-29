@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 const nav = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
-            <img src="img/icon.png" alt="Ukelelista" className="mr-2" height="30px"/>
+            <img src="/img/icon.png" alt="Ukelelista" className="mr-2" height="30px"/>
             <a className="navbar-brand" href="http://www.ukulelista.gr">Ukulelista <small><strong>[ beta ]</strong>
             </small></a>
 

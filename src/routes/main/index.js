@@ -1,6 +1,6 @@
 import React from 'react'
 
-const main = () => {
+export const Main = () => {
     return (
         <div className="section-title col-lg-8 col-md-10 ml-auto mr-auto text-center">
             <h3>Τι είναι το Ukulelista;</h3>
@@ -25,4 +25,4 @@ const main = () => {
         </div>)
 }
 
-export default main
+export default Main
