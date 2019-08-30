@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b0743c4a-e298-43f8-96d5-b4aea15807a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/library/item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/library/item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/play/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/play/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +98,7 @@
       <workItem from="1567153389919" duration="23000" />
       <workItem from="1567153432408" duration="4000" />
       <workItem from="1567153454699" duration="146000" />
-      <workItem from="1567154018606" duration="7905000" />
+      <workItem from="1567154018606" duration="9053000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;Created first page&#10;Navigation works&#10;Working on listing">
       <created>1566890631720</created>
@@ -132,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567160489263</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed Link">
+      <created>1567163273696</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1567163273696</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +159,7 @@
     <MESSAGE value="Last commit before adding redux" />
     <MESSAGE value="Latest Commit" />
     <MESSAGE value="Added chords with images&#10;Prettified a bit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added chords with images&#10;Prettified a bit." />
+    <MESSAGE value="Fixed Link" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Link" />
   </component>
 </project>
