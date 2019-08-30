@@ -5,6 +5,9 @@ export const GET_SONGS_SUCCESS = 'GET_SONGS_SUCCESS'
 export const GET_SONG_SUCCESS = 'GET_SONG_SUCCESS'
 export const IS_LOADING_SONG = 'IS_LOADING_SONG'
 export const IS_LOADING_SONGS = 'IS_LOADING_SONGS'
+export const SET_CURRENT_CHORD = 'SET_CURRENT_CHORD'
+export const SET_CHORDS = 'SET_CHORDS'
+export const SET_CHORDS_TIMEOUTS = 'SET_CHORDS_TIMEOUTS'
 
 export const getSongs = (songs) => {
     return {
@@ -39,7 +42,35 @@ export const isLoadingSongs = (bool) => {
 export const isLoadingSong = (bool) => {
     return {
         type: "IS_LOADING_SONG",
-            isLoadingSong: bool
+        isLoadingSong: bool
+    }
+}
+
+export const setCurrentChord = (chord) =>{
+    return {
+        type: "SET_CURRENT_CHORD",
+        currentChord : chord
+    }
+}
+
+export const setChords = (chords) => {
+    return {
+        type: "SET_CHORDS",
+        chords : chords
+    }
+}
+
+export const setChordsTimeouts = (timeouts) => {
+    return {
+        type: "SET_CHORDS_TIMEOUTS",
+        chordsTimeouts : timeouts
+    }
+}
+
+export const clearChordsTimeouts = (timeouts) => {
+    return {
+        type: "CLEAR_CHORDS_TIMEOUTS",
+        chordsTimeouts : timeouts
     }
 }
 
@@ -110,3 +141,4 @@ const fetchSong = (songName) => {
             })
     }
 }
+

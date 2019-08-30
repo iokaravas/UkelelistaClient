@@ -14,8 +14,8 @@ export const loadingLib = () => {
 export const Library = () => {
 
     const dispatch = useDispatch()
-    const songs = useSelector(state => state.songs)
-    const isLoading = useSelector(state => state.isLoadingSongs)
+    const songs = useSelector(state => state.appReducer.songs)
+    const isLoading = useSelector(state => state.appReducer.isLoadingSongs)
 
     useEffect(()=>{dispatch(fetchSongsIfNeeded(songs))},[])
 

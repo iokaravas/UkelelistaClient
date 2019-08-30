@@ -1,39 +1,10 @@
-const initialState = {
-    songs: [],
-    song: {},
-    isLoadingSongs: true,
-    isLoadingSong: true
-}
+import { combineReducers } from 'redux'
+import appReducer from './appreducer'
+import playerReducer from './playerreducer'
 
-const rootReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'GET_SONGS_SUCCESS':
-            return {
-                ...state,
-                songs: action.songs
-            }
-            break
-        case 'IS_LOADING_SONGS':
-            return {
-                ...state,
-                isLoadingSongs: action.isLoadingSongs
-            }
-            break
-        case 'IS_LOADING_SONG':
-            return {
-                ...state,
-                isLoadingSong: action.isLoadingSong
-            }
-            break
-        case 'GET_SONG_SUCCESS':
-            return {
-                ...state,
-                song: action.song
-            }
-            break
-        default:
-            return state
-    }
-}
+const rootReducer = combineReducers({
+    appReducer,
+    playerReducer
+})
 
 export default rootReducer
