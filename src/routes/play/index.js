@@ -13,6 +13,7 @@ export const Play = (props) => {
     const dispatch = useDispatch()
 
     const [currentChord, setChord] = useState('')
+    const [chordTimeouts, setTimeouts] = useState([])
 
 
     useEffect(()=>{
@@ -38,11 +39,44 @@ export const Play = (props) => {
     const handleYTState = (event)=>{
         const currentTime = event.target.getCurrentTime()
 
-        if (event.data == 1) {
+        if (event.data === 1) {
             console.log('started playing')
 
+            // Set current Chord
             setChord(identifyChord(currentTime, chordsTimeline).name)
-            // setChord(event.target.getCurrentTime())
+
+            // Clear previous timeouts
+            if (chordTimeouts.length!==0) {
+                for (let timeout of chordTimeouts) {
+                    clearTimeout(timeout)
+                }
+            }
+            setTimeouts([])
+
+            // Set future Chords
+            let timeouts = []
+            for (let chord of chordsTimeline) {
+                let duration = parseFloat(chord.time) - currentTime
+                if (duration<0) continue
+
+                let timeOut = setTimeout(()=>{
+                    setChord(chord.name)
+                },duration*1000)
+                timeouts.push(timeOut)
+            }
+
+            setTimeouts(timeouts)
+
+
+        } else { // Paused - stopped whatever - change later.
+            // Clear previous timeouts
+            if (chordTimeouts.length!==0) {
+                console.log('cleared timeouts')
+                for (let timeout of chordTimeouts) {
+                    clearTimeout(timeout)
+                }
+            }
+            setTimeouts([])
         }
     }
 
