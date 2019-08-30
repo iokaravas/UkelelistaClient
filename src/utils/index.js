@@ -5,9 +5,9 @@ export const parseJSONChords = (song) => {
         song = JSON.parse(song)
     }
 
-    Object.keys(song).map((group)=>{
-        song[group].chords.map((chord)=>{
-            chord.time.map((step)=>{
+    Object.keys(song).forEach((group)=>{
+        song[group].chords.forEach((chord)=>{
+            chord.time.forEach((step)=>{
                 let chordObj = {
                     time: parseFloat(step.step),
                     name: chord.chord

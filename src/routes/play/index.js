@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ChordButton from '../../components/play/chordbutton'
+import ChordOverlay from "../../components/play/chordoverlay"
 import {fetchSongIfNeeded} from '../../actions'
 import {useSelector, useDispatch} from 'react-redux'
 import {parseJSONChords, identifyChord} from '../../utils/index.js'
@@ -26,8 +27,6 @@ export const Play = (props) => {
 
     const chordsTimeline = parseJSONChords(song.chords)
 
-    console.log(chordsTimeline)
-
     const opts = {
         height: '390',
         width: '640',
@@ -46,11 +45,10 @@ export const Play = (props) => {
             setChord(identifyChord(currentTime, chordsTimeline).name)
 
             // Clear previous timeouts
-            if (chordTimeouts.length!==0) {
                 for (let timeout of chordTimeouts) {
                     clearTimeout(timeout)
                 }
-            }
+
             setTimeouts([])
 
             // Set future Chords
@@ -81,6 +79,7 @@ export const Play = (props) => {
     }
 
     return (
+
         <div className="section-title col-lg-8 col-md-10 ml-auto mr-auto text-center">
             <h3>Play song {songName}</h3>
 
@@ -93,6 +92,8 @@ export const Play = (props) => {
                 />
 
                 <h3> {currentChord} </h3>
+
+                <ChordOverlay chord={currentChord} />
 
                 {/*<ChordButton {...song}/>*/}
 
