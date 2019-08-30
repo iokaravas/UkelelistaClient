@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const Item = ({title, name, base, link})=> {
 
@@ -8,7 +9,7 @@ const Item = ({title, name, base, link})=> {
                 <div className="card-body">
                     <h4 className="card-title">{title}</h4>
                     <p>Τόνος Video: <strong>{base}</strong></p>
-                    <a href={`/play/${name}`}  className="btn btn-outline-secondary btn-squared">Παίξε το...</a>
+                    <Link to={`/play/${name}`} className="btn btn-outline-secondary btn-squared">Παίξε το...</Link>
                 </div>
             </div>
     )

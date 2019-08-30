@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState, Fragment} from 'react';
 import ChordButton from '../../components/play/chordbutton'
 import ChordOverlay from "../../components/play/chordoverlay"
 import {fetchSongIfNeeded} from '../../actions'
 import {useSelector, useDispatch} from 'react-redux'
 import {parseJSONChords, identifyChord} from '../../utils/index.js'
 import YouTube from 'react-youtube'
-
+import {Helmet} from 'react-helmet'
 
 export const Play = (props) => {
     const songName = props.match.params.songName
@@ -17,9 +17,9 @@ export const Play = (props) => {
     const [chordTimeouts, setTimeouts] = useState([])
 
 
-    useEffect(()=>{
-            dispatch(fetchSongIfNeeded(songName))
-    },[])
+    useEffect(() => {
+        dispatch(fetchSongIfNeeded(songName))
+    }, [])
 
     if (isLoading) {
         return <div> Loading... </div>
@@ -35,7 +35,7 @@ export const Play = (props) => {
         }
     }
 
-    const handleYTState = (event)=>{
+    const handleYTState = (event) => {
         const currentTime = event.target.getCurrentTime()
 
         if (event.data === 1) {
@@ -45,9 +45,9 @@ export const Play = (props) => {
             setChord(identifyChord(currentTime, chordsTimeline).name)
 
             // Clear previous timeouts
-                for (let timeout of chordTimeouts) {
-                    clearTimeout(timeout)
-                }
+            for (let timeout of chordTimeouts) {
+                clearTimeout(timeout)
+            }
 
             setTimeouts([])
 
@@ -55,11 +55,11 @@ export const Play = (props) => {
             let timeouts = []
             for (let chord of chordsTimeline) {
                 let duration = parseFloat(chord.time) - currentTime
-                if (duration<0) continue
+                if (duration < 0) continue
 
-                let timeOut = setTimeout(()=>{
+                let timeOut = setTimeout(() => {
                     setChord(chord.name)
-                },duration*1000)
+                }, duration * 1000)
                 timeouts.push(timeOut)
             }
 
@@ -68,7 +68,7 @@ export const Play = (props) => {
 
         } else { // Paused - stopped whatever - change later.
             // Clear previous timeouts
-            if (chordTimeouts.length!==0) {
+            if (chordTimeouts.length !== 0) {
                 console.log('cleared timeouts')
                 for (let timeout of chordTimeouts) {
                     clearTimeout(timeout)
@@ -79,27 +79,34 @@ export const Play = (props) => {
     }
 
     return (
+        <Fragment>
 
-        <div className="section-title col-lg-8 col-md-10 ml-auto mr-auto text-center">
-            <h3>Play song {songName}</h3>
+            <Helmet>
+                <meta charSet="utf-8"/>
+                <title>My Title</title>
+                <link rel="canonical" href="http://mysite.com/example"/>
+            </Helmet>
 
-            <div className="row">
+            <div className="section-title col-lg-8 col-md-10 ml-auto mr-auto text-center">
+                <h3>Play song {songName}</h3>
 
-                <YouTube
-                    videoId={song.link}
-                    opts={opts}
-                    onStateChange={handleYTState}
-                />
+                <div className="row">
 
-                <h3> {currentChord} </h3>
+                    <YouTube
+                        videoId={song.link}
+                        opts={opts}
+                        onStateChange={handleYTState}
+                    />
 
-                <ChordOverlay chord={currentChord} />
+                    <h3> {currentChord} </h3>
 
-                {/*<ChordButton {...song}/>*/}
+                    <ChordOverlay chord={currentChord}/>
 
+                    {/*<ChordButton {...song}/>*/}
+
+                </div>
             </div>
-        </div>
-
+        </Fragment>
     )
 }
 
